@@ -1,0 +1,22 @@
+nav {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: lightseagreen;
+    opacity: .3;
+    font-size: 30px;
+}
+
+nav:hover {
+    opacity: 1;
+}
+
+#logo {
+    float: left;
+    margin-left: 20px;
+}
+
+#cart {
+    float: right;
+    margin-right: 20px;
+}

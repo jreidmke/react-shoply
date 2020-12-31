@@ -20,4 +20,6 @@ function useCart() {
     return [cart, addToCart, removeFromCart]
 }
 
+
+
 export default useCart;
