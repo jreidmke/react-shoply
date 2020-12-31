@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import {useContext} from 'react';
 import CartContext from './CartContext';
 import data from './data.json';
 import {qty, total} from './helpers';

@@ -1,10 +1,9 @@
 import './App.css';
 import data from './data.json';
-import { Link, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import useCart from './hooks';
 import NavBar from './NavBar';
 import CartContext from './CartContext';
-import Routes from './Routes';
 import Cart from './Cart';
 import { useState } from 'react';
 

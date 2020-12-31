@@ -4,7 +4,6 @@ import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    const {cart} = useContext(CartContext);
 
     return(
       <nav>
