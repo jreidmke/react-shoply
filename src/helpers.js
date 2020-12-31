@@ -8,4 +8,16 @@ function total(cart) {
     return sum.toFixed(2);
 }
 
-export default total;
+function qty(cart) {
+    let obj = {};
+    for(let item of cart) {
+        if(!(item in obj)) {
+            obj[item] = 1;
+        } else {
+            obj[item]++;
+        }
+    }
+    return obj;
+}
+
+export {total, qty};

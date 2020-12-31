@@ -5,6 +5,7 @@ import { Link, BrowserRouter } from 'react-router-dom'
 import useCart from './hooks';
 import NavBar from './NavBar';
 import CartContext from './CartContext';
+import Routes from './Routes';
 
 function App() {
   const [cart, addToCart, removeFromCart] = useCart();
@@ -25,6 +26,7 @@ function App() {
       <CartContext.Provider value={{cart}}>
         <BrowserRouter>
           <NavBar/>
+          <Routes/>
           <br/>
           <br/>
           <br/>
