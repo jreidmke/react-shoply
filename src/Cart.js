@@ -1,10 +1,11 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import CartContext from './CartContext';
 import data from './data.json';
 import {qty, total} from './helpers';
+import DiscountForm from './DiscountForm';
 
 const Cart = () => {
-    const { cart, addToCart, removeFromCart } = useContext(CartContext);
+    const { cart, discount } = useContext(CartContext);
     const myItems = qty(cart);
     const uniqueItems = new Set(cart);
 
@@ -14,14 +15,14 @@ const Cart = () => {
             <img src={data.products[key].image_url} id='product-img' alt='product-image'/>
             <h5>Price: {data.products[key].price}</h5>
             <h5>Description: {data.products[key].description}</h5>
-            <h3>Qty: {myItems[key]} // Item Total: {myItems[key] * data.products[key].price.toFixed(2)}</h3>
+            <h3>Qty: {myItems[key]} // Item Total: {(myItems[key] * data.products[key].price).toFixed(2)}</h3>
         </div>
     ));
 
-
     return(
         <div id='cart-div'>
-            <h2>Current Total: {total(cart)}</h2>
+            <h2>Current Total: {total(cart) - discount}</h2>
+            <DiscountForm/>
             {display}
         </div>  
 

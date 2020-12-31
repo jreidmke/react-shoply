@@ -6,9 +6,12 @@ import NavBar from './NavBar';
 import CartContext from './CartContext';
 import Routes from './Routes';
 import Cart from './Cart';
+import { useState } from 'react';
 
 function App() {
   const [cart, addToCart, removeFromCart] = useCart();
+  const [discount, setDiscount] = useState(0);
+  const [isDiscounted, setIsDiscounted] = useState(false);
 
   const products = Object.keys(data.products).map(key =>
     <div key={key} className='product-card'>
@@ -23,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <CartContext.Provider value={{cart}}>
+      <CartContext.Provider value={{cart, discount, setDiscount, isDiscounted, setIsDiscounted}}>
         <BrowserRouter>
           <NavBar/>
           <div className='Body'>
