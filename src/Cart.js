@@ -1,8 +1,7 @@
 import {useContext} from 'react';
 import CartContext from './CartContext';
 import data from './data.json';
-import {qty} from './helpers';
-import './Cart.css';
+import {qty, total} from './helpers';
 
 const Cart = () => {
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
@@ -22,6 +21,7 @@ const Cart = () => {
 
     return(
         <div id='cart-div'>
+            <h2>Current Total: {total(cart)}</h2>
             {display}
         </div>  
 
